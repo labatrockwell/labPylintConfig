@@ -75,6 +75,13 @@ comment=no
 required-attributes=
 
 # List of builtins function names that should not be used, separated by a comma
+#  from http://lists.logilab.org/pipermail/python-projects/2004-May/000108.html
+#
+##They are not officially deprecated, but we (Logilab) think that list
+##comprehensions are in most cases a more readable and understandable way
+##to accomplish the same thing as one could do with map and filter.
+##The default pylint configuration is done according to Logilab's coding
+##standards, so map and filter are listed here to discourage their use.
 bad-functions=map,filter,apply,input
 
 # Regular expression which should only match correct module names
@@ -93,13 +100,13 @@ function-rgx=[a-z_][a-z0-9_]{2,30}$
 method-rgx=[a-z_][a-z0-9_]{2,30}$
 
 # Regular expression which should only match correct instance attribute names
-attr-rgx=[a-z_][a-z0-9_]{2,30}$
+attr-rgx=[a-z_][a-z0-9_]*$
 
 # Regular expression which should only match correct argument names
-argument-rgx=[a-z_][a-z0-9_]{2,30}$
+argument-rgx=[a-z_][a-z0-9_]*$
 
 # Regular expression which should only match correct variable names
-variable-rgx=[a-z_][a-z0-9_]{2,30}$
+variable-rgx=[a-z_][a-z0-9_]*$
 
 # Regular expression which should only match correct list comprehension /
 # generator expression variable names
@@ -119,10 +126,10 @@ no-docstring-rgx=__.*__
 [FORMAT]
 
 # Maximum number of characters on a single line.
-max-line-length=80
+max-line-length=160
 
 # Maximum number of lines in a module
-max-module-lines=1000
+#max-module-lines=1000
 
 # String used as indentation unit. This is usually " " (4 spaces) or "\t" (1
 # tab).
@@ -203,35 +210,35 @@ valid-metaclass-classmethod-first-arg=mcs
 [DESIGN]
 
 # Maximum number of arguments for function / method
-max-args=5
+#max-args=5
 
 # Argument names that match this expression will be ignored. Default to name
 # with leading underscore
 ignored-argument-names=_.*
 
 # Maximum number of locals for function / method body
-max-locals=15
+#max-locals=15
 
 # Maximum number of return / yield for function / method body
-max-returns=6
+#max-returns=6
 
 # Maximum number of branch for function / method body
-max-branchs=12
+#max-branchs=12
 
 # Maximum number of statements in function / method body
-max-statements=50
+#max-statements=50
 
 # Maximum number of parents for a class (see R0901).
-max-parents=7
+#max-parents=7
 
 # Maximum number of attributes for a class (see R0902).
-max-attributes=7
+#max-attributes=7
 
 # Minimum number of public methods for a class (see R0903).
-min-public-methods=2
+#min-public-methods=2
 
 # Maximum number of public methods for a class (see R0904).
-max-public-methods=20
+#max-public-methods=20
 
 
 [IMPORTS]
